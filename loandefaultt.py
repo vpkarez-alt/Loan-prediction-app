@@ -7,7 +7,7 @@ import pickle
 # =========================
 st.set_page_config(
     page_title="Loan Default Prediction - Bank Standard",
-    page_icon="₦💰",  # Naira symbol + money bag
+    page_icon="💰",  # Naira symbol + money bag
     layout="wide"
 )
 
@@ -201,6 +201,7 @@ if st.button("🔍 Predict Loan Default Risk"):
         st.markdown('<div class="success-box">✅ <b>Likely to Repay:</b> This customer is predicted to repay the loan on time.</div>', unsafe_allow_html=True)
     else:  # False means default
         st.markdown('<div class="error-box">⚠️ <b>Likely to Default:</b> This customer may fail to repay the loan.</div>', unsafe_allow_html=True)
+
 
 
 
