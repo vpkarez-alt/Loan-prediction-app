@@ -68,7 +68,7 @@ with open('loandefault.pkl', 'rb') as f:
 # =========================
 # App Header
 # =========================
-st.markdown("<h1>₦ Loan Default Prediction</h1>", unsafe_allow_html=True)
+st.markdown("<h1>💰₦ Loan Default Prediction</h1>", unsafe_allow_html=True)
 st.markdown("### Professional Banking Standard - Predict a Customer's Loan Repayment Likelihood")
 
 # =========================
@@ -200,4 +200,5 @@ if st.button("🔍 Predict Loan Default Risk"):
         st.markdown('<div class="success-box">✅ <b>Likely to Repay:</b> This customer is predicted to repay the loan on time.</div>', unsafe_allow_html=True)
     else:  # False means default
         st.markdown('<div class="error-box">⚠️ <b>Likely to Default:</b> This customer may fail to repay the loan.</div>', unsafe_allow_html=True)
+
 
