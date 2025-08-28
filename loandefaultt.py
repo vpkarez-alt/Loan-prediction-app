@@ -12,27 +12,23 @@ st.set_page_config(
 )
 
 # =========================
-# Custom CSS Styling (Theme-Neutral & Readable in Light/Dark Mode)
+# Custom CSS Styling
 # =========================
 st.markdown("""
     <style>
-    /* Main App Background - neutral gradient works in both themes */
     .stApp {
         background: linear-gradient(135deg, #b0c4de, #8da3b8);
         font-family: 'Segoe UI', sans-serif;
     }
-    /* Headings */
     h1, h3, h4, h2, h5, h6, label {
-        color: #004080 !important; /* Navy blue heading color */
+        color: #004080 !important;
     }
-    /* Make input text lighter for better visibility in both modes */
     .stNumberInput input, .stSelectbox div, .stSlider, textarea, input[type="text"], input[type="number"] {
         background-color: rgba(255, 255, 255, 0.8) !important;
         color: #003366 !important;
         font-weight: bold;
         border-radius: 8px;
     }
-    /* Buttons */
     .stButton>button {
         background-color: #004080;
         color: white;
@@ -46,7 +42,6 @@ st.markdown("""
         background-color: #0066cc;
         color: #f2f2f2;
     }
-    /* Success box */
     .success-box {
         background-color: rgba(212, 237, 218, 0.95);
         border-left: 6px solid #28a745;
@@ -54,7 +49,6 @@ st.markdown("""
         border-radius: 5px;
         color: #1a3d1a;
     }
-    /* Error box */
     .error-box {
         background-color: rgba(248, 215, 218, 0.95);
         border-left: 6px solid #dc3545;
@@ -83,23 +77,23 @@ st.markdown("### Professional Banking Standard - Predict a Customer's Loan Repay
 st.markdown("#### 💳 Loan Information")
 col1, col2, col3 = st.columns(3)
 with col1:
-  loan_number = st.number_input(
-    "Number of Loans Taken",
-    min_value=1,
-    max_value=60,
-    value=20,
-    step=1
-)
+    loan_number = st.number_input(
+        "Number of Loans Taken",
+        min_value=1,
+        max_value=60,
+        value=20,
+        step=1
+    )
     bank_account_type = st.selectbox("Bank Account Type", ["Savings", "Current", "Other"])
 
 with col2:
     loan_amount = st.number_input(
-    "Loan Amount",
-    min_value=5000,
-    max_value=1_000_000,
-    value=50_000,
-    step=1000
-)
+        "Loan Amount",
+        min_value=5000,
+        max_value=1_000_000,
+        value=50_000,
+        step=1000
+    )
     bank_name_clients = st.selectbox(
         "Bank Name",
         [
@@ -108,15 +102,15 @@ with col2:
             "Sterling Bank", "UBA", "Union Bank", "Unity Bank", "Wema Bank", "Zenith Bank"
         ]
     )
-with col3:
-   loan_total_due = st.number_input(
-    "Total Loan Due",
-    min_value=5000,
-    max_value=1_000_000,
-    value=50_000,
-    step=1000
-)
 
+with col3:
+    loan_total_due = st.number_input(
+        "Total Loan Due",
+        min_value=5000,
+        max_value=1_000_000,
+        value=50_000,
+        step=1000
+    )
 
 # =========================
 # Employment & Education
@@ -143,19 +137,20 @@ with col6:
     on_time_ratio = st.slider("On-time Repayment Ratio (0-1)", 0.0, 1.0, 0.5)
 with col7:
     avg_loan_term_days = st.number_input(
-    "Average Loan Term (days)",
-    min_value=10,
-    max_value=100,
-    value=60,
-    step=1)
+        "Average Loan Term (days)",
+        min_value=10,
+        max_value=100,
+        value=60,
+        step=1
+    )
 with col8:
-   credit_score = st.number_input(
-    "Credit Score (0-100)",
-    min_value=0,
-    max_value=100,
-    value=50,
-    step=1
-)
+    credit_score = st.number_input(
+        "Credit Score (0-100)",
+        min_value=0,
+        max_value=100,
+        value=50,
+        step=1
+    )
 
 # =========================
 # Personal Information
@@ -205,5 +200,3 @@ if st.button("🔍 Predict Loan Default Risk"):
         st.markdown('<div class="success-box">✅ <b>Likely to Repay:</b> This customer is predicted to repay the loan on time.</div>', unsafe_allow_html=True)
     else:  # False means default
         st.markdown('<div class="error-box">⚠️ <b>Likely to Default:</b> This customer may fail to repay the loan.</div>', unsafe_allow_html=True)
-
-
