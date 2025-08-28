@@ -83,10 +83,22 @@ st.markdown("### Professional Banking Standard - Predict a Customer's Loan Repay
 st.markdown("#### 💳 Loan Information")
 col1, col2, col3 = st.columns(3)
 with col1:
-    loan_number = st.number_input("Number of Loans Taken", min_value=1.0, max_value=60.0, value=20.0)
+  loan_number = st.number_input(
+    "Number of Loans Taken",
+    min_value=1,
+    max_value=60,
+    value=20,
+    step=1
+)
     bank_account_type = st.selectbox("Bank Account Type", ["Savings", "Current", "Other"])
 with col2:
-    loan_amount = st.number_input("Loan Amount", min_value=5000.0, max_value=1_000_000.0, value=50_000.0)
+    loan_amount = st.number_input(
+    "Loan Amount",
+    min_value=5000,
+    max_value=1_000_000,
+    value=50_000,
+    step=1000
+)
     bank_name_clients = st.selectbox(
         "Bank Name",
         [
@@ -96,7 +108,14 @@ with col2:
         ]
     )
 with col3:
-    loan_total_due = st.number_input("Total Loan Due", min_value=5000.0, max_value=1_000_000.0, value=50_000.0)
+   loan_total_due = st.number_input(
+    "Total Loan Due",
+    min_value=5000,
+    max_value=1_000_000,
+    value=50_000,
+    step=1000
+)
+
 
 # =========================
 # Employment & Education
@@ -122,9 +141,20 @@ col6, col7, col8 = st.columns(3)
 with col6:
     on_time_ratio = st.slider("On-time Repayment Ratio (0-1)", 0.0, 1.0, 0.5)
 with col7:
-    avg_loan_term_days = st.number_input("Average Loan Term (days)", min_value=10.0, max_value=100.0, value=60.0)
+    avg_loan_term_days = st.number_input(
+    "Average Loan Term (days)",
+    min_value=10,
+    max_value=100,
+    value=60,
+    step=1)
 with col8:
-    credit_score = st.number_input("Credit Score (0-100)", min_value=0.0, max_value=100.0, value=50.0)
+   credit_score = st.number_input(
+    "Credit Score (0-100)",
+    min_value=0,
+    max_value=100,
+    value=50,
+    step=1
+)
 
 # =========================
 # Personal Information
@@ -174,3 +204,4 @@ if st.button("🔍 Predict Loan Default Risk"):
         st.markdown('<div class="success-box">✅ <b>Likely to Repay:</b> This customer is predicted to repay the loan on time.</div>', unsafe_allow_html=True)
     else:  # False means default
         st.markdown('<div class="error-box">⚠️ <b>Likely to Default:</b> This customer may fail to repay the loan.</div>', unsafe_allow_html=True)
+
