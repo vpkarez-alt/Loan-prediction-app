@@ -91,6 +91,7 @@ with col1:
     step=1
 )
     bank_account_type = st.selectbox("Bank Account Type", ["Savings", "Current", "Other"])
+
 with col2:
     loan_amount = st.number_input(
     "Loan Amount",
@@ -204,4 +205,5 @@ if st.button("🔍 Predict Loan Default Risk"):
         st.markdown('<div class="success-box">✅ <b>Likely to Repay:</b> This customer is predicted to repay the loan on time.</div>', unsafe_allow_html=True)
     else:  # False means default
         st.markdown('<div class="error-box">⚠️ <b>Likely to Default:</b> This customer may fail to repay the loan.</div>', unsafe_allow_html=True)
+
 
